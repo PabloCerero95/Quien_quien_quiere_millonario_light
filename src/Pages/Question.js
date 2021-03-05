@@ -11,7 +11,7 @@ class Question extends React.Component {
     }
 
     componentWillMount() {
-        var numQuestion = Math.floor(Math.random() * 8) + 1;
+        var numQuestion = Math.floor(Math.random() * 35) + 1;
         fetch('https://agile-journey-71687.herokuapp.com/Questions/' + numQuestion)
             .then((response) => {
             return response.json()
@@ -26,7 +26,7 @@ class Question extends React.Component {
         var respuestaCorrecta = this.state.pregunta.Answer_Correct
         if (respuestaCorrecta == respuestaUsuario){
             alert("¡Has acertado! Siguiente pregunta")
-            window.location.reload();
+            window.location.assign("https://quienquieresermillonario.netlify.app/formPlayer/question");
         }
         else{
             alert("¡Has fallado! ¿Quieres jugar otra vez?")
